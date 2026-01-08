@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLer·个人日志 - 个人博客</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+        <style>
+        /* 联系页面特定样式 */
+        .contact-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        /* 联系信息样式 */
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+        
+        .contact-info p {
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-item i {
+            font-size: 1.8rem;
+            color: #3498db;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        
+        .contact-text p {
+            margin-bottom: 0;
+            color: #666;
+        }
+        
+        .contact-text a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* 社交媒体样式 */
+        .social-media h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            color: #3498db;
+            font-size: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background: #3498db;
+            color: #fff;
+        }
+        
+        /* 联系表单样式 */
+        .contact-form-container h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        /* 地图区域样式 */
+        .map-section {
+            margin-top: 50px;
+        }
+        
+        .map-section h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+        
+        .map-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 300px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            color: #666;
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+        
+        .map-placeholder p {
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-info,
+            .contact-form-container {
+                text-align: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 60px 0;
+            }
+            
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-info h3,
+            .contact-form-container h3,
+            .map-section h3 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+            
+            .map-container {
+                padding: 20px;
+            }
+            
+            .map-placeholder {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                padding: 12px;
+                font-size: 0.95rem;
+            }
+            
+            .btn-primary {
+                width: 100%;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">HTMLer·个人日志</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#f">关于我</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#articles">文章</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#contact">联系我</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section id="home" class="banner">
+        <div class="banner-content">
+            <h1>你好，我是<span class="highlight">李嘉旭</span></h1>
+            <p>HTML/CSS/JavaScript 学习者 | 求职前端开发岗位 | 专注语义化布局与响应式设计</p>
+            <a href="#articles" class="btn">查看我的文章</a>
+        </div>
+    </section>
+
+    <!-- 个人简介模块 -->
+    <section class="profile-section" id="f">
+        <div class="container">
+            <div class="profile-content">
+                <img src="images/旭.png" alt="" class="avatar">
+                <div class="profile-info">
+                    <a href="关于我.html"><p>了解我</p></a>
+                    <h2>关于我</h2>
+                    <p class="tagline">专注于前端开发的学习者</p>
+                    <p>我是一名热爱前端开发的学习者，尤其专注于HTML5语义化布局与CSS3样式实现。坚持「手写代码」原则，拒绝过度依赖框架，注重夯实基础，擅长通过语义化标签构建结构清晰、可维护的页面。</p>
+                    <p>目前正在学习JavaScript和现代前端框架，希望能在前端开发领域不断成长，成为一名优秀的前端工程师。</p>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" title="邮箱"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能模块 -->
+    <section id="skillst" class="skills-section">
+        <div class="container">
+            <h2>技能</h2>
+            <div class="skills-content">
+                <!-- 前端技术 -->
+                <div class="skills-category fade-in">
+                    <h3>前端技术</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item fade-in delay-1">
+                            <div class="skill-name">HTML5</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                            <div class="skill-percentage">90%</div>
+                        </div>
+                        <div class="skill-item fade-in delay-2">
+                            <div class="skill-name">CSS3</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                            <div class="skill-percentage">85%</div>
+                        </div>
+                        <div class="skill-item fade-in delay-3">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%;"></div>
+                            </div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-item fade-in delay-4">
+                            <div class="skill-name">响应式设计</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 其他技能 -->
+                <div class="skills-category fade-in delay-1">
+                    <h3>其他技能</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item fade-in delay-2">
+                            <div class="skill-name">Git</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%;"></div>
+                            </div>
+                            <div class="skill-percentage">75%</div>
+                        </div>
+                        <div class="skill-item fade-in delay-3">
+                            <div class="skill-name">Node.js</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%;"></div>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                        <div class="skill-item fade-in delay-4">
+                            <div class="skill-name">React</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 50%;"></div>
+                            </div>
+                            <div class="skill-percentage">50%</div>
+                        </div>
+                        <div class="skill-item fade-in delay-5">
+                            <div class="skill-name">Vue.js</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 55%;"></div>
+                            </div>
+                            <div class="skill-percentage">55%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文章列表模块 -->
+    <section id="articles" class="recommend-section">
+        <div class="container">
+            <h2>我的文章</h2>
+            
+            <!-- 文章列表 -->
+            <div class="articles-grid">
+                <!-- 文章卡片1 -->
+                <div class="article-card fade-in" data-id="1">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="文章封面">
+                    <div class="article-content">
+                        <h3>HTML5语义化布局的最佳实践</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2024-01-15</span>
+                            <span><i class="fas fa-folder"></i> HTML</span>
+                            <span><i class="fas fa-tag"></i> 语义化</span>
+                            <span><i class="far fa-eye"></i> 128</span>
+                        </div>
+                        <p class="article-excerpt">语义化HTML是指使用正确的HTML标签来表示内容的结构和含义，而不仅仅是为了样式。本文将介绍HTML5语义化标签的最佳实践...</p>
+                        <a href="文章1.html" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+                
+                <!-- 文章卡片2 -->
+                <div class="article-card fade-in delay-1" data-id="2">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="文章封面">
+                    <div class="article-content">
+                        <h3>CSS3 Flexbox布局完全指南</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2024-01-10</span>
+                            <span><i class="fas fa-folder"></i> CSS</span>
+                            <span><i class="fas fa-tag"></i> Flexbox</span>
+                            <span><i class="far fa-eye"></i> 95</span>
+                        </div>
+                        <p class="article-excerpt">Flexbox是CSS3中引入的一种新的布局模式，它提供了一种更高效的方式来布局、对齐和分配容器内元素的空间...</p>
+                        <a href="文章2.html" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+                
+                <!-- 文章卡片3 -->
+                <div class="article-card fade-in delay-2" data-id="3">
+                    <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="文章封面">
+                    <div class="article-content">
+                        <h3>JavaScript基础语法详解</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2024-01-05</span>
+                            <span><i class="fas fa-folder"></i> JavaScript</span>
+                            <span><i class="fas fa-tag"></i> 基础语法</span>
+                            <span><i class="far fa-eye"></i> 156</span>
+                        </div>
+                        <p class="article-excerpt">JavaScript是一种轻量级的脚本语言，广泛用于网页交互和动态内容生成。本文将详细介绍JavaScript的基础语法...</p>
+                        <a href="文章3.html" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 查看全部文章按钮 -->
+            <a href="archive.html" class="view-all-btn fade-in delay-3">查看全部文章</a>
+        </div>
+    </section>
+
+    <!-- 项目模块 -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>项目</h2>
+            <div class="projects-grid">
+                <!-- 项目1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/2.jpeg" alt="简易博客页面">
+                    </div>
+                    <div class="project-content">
+                        <h3>简易博客页面</h3>
+                        <div class="project-meta">
+                            <span><i class="fas fa-code"></i> HTML5 + CSS3 + JavaScript</span>
+                            <span><i class="far fa-calendar"></i> 2025-01-08</span>
+                        </div>
+                        <p class="project-description">实现了首页、文章详情页和分类列表页的简易博客系统，使用CSS Grid布局和响应式设计。</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> 预览</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/3.jpeg" alt="响应式电商页面">
+                    </div>
+                    <div class="project-content">
+                        <h3>无畏契约官网</h3>
+                        <div class="project-meta">
+                            <span><i class="fas fa-code"></i> HTML5 + CSS3 + JavaScript</span>
+                            <span><i class="far fa-calendar"></i> 2025-011-30</span>
+                        </div>
+                        <p class="project-description">使用响应式设计实现的游戏官网展示页面，包含游戏角色、详情和系统需求。</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> 预览</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 联系页面区域 -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>联系我</h2>
+            
+            <div class="contact-content">
+                <!-- 联系信息 -->
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <p>如果您有任何问题或建议，欢迎通过以下方式与我联系，我会尽快回复您！</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-text">
+                                <h4>邮箱</h4>
+                                <p><a href="#">lijiaxu@example.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-text">
+                                <h4>电话</h4>
+                                <p>12345678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div class="contact-text">
+                                <h4>GitHub</h4>
+                                <p><a href="#" target="_blank">github.com/lichao</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-twitter"></i>
+                            <div class="contact-text">
+                                <h4>Twitter</h4>
+                                <p><a href="#" target="_blank">twitter.com/lichao</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="contact-text">
+                                <h4>LinkedIn</h4>
+                                <p><a href="#" target="_blank">linkedin.com/in/lichao</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-weixin"></i>
+                            <div class="contact-text">
+                                <h4>微信</h4>
+                                <p>lijiaxu</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 社交媒体图标 -->
+                    <div class="social-media">
+                        <h3>关注我</h3>
+                        <div class="social-icons">
+                            <a href="#" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 联系表单 -->
+                <div class="contact-form-container">
+                    <h3>发送消息</h3>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">主题</label>
+                            <input type="text" id="subject" name="subject" placeholder="请输入消息主题" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">消息内容</label>
+                            <textarea id="message" name="message" rows="6" placeholder="请输入您的消息内容" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">发送消息</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- 地图区域 -->
+            <div class="map-section">
+                <h3>办公地址</h3>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>北京市朝阳区中关村科技园区</p>
+                        <p>邮编：100080</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>关于博客</h3>
+                <p>这是一个专注于前端开发学习的个人博客，记录我的学习历程和技术分享。</p>
+                <p>坚持原创，分享有价值的技术内容。</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="#">lijiaxu@example.com</a></li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><i class="fab fa-twitter"></i> <a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><i class="fas fa-phone"></i> 12345678</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="关于我.html">关于我</a></li>
+                    <li><a href="#skills">技能</a></li>
+                    <li><a href="#articles">文章</a></li>
+                    <li><a href="#projects">项目</a></li>
+                    <li><a href="#contact">联系我</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HTMLer·lijiaxu. 保留所有权利. | <a href="https://beian.miit.gov.cn/" target="_blank"></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

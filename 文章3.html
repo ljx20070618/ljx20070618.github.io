@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基础语法详解 - HTMLer·技术日志</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">HTMLer·技术日志</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="index.html#skills">技能</a></li>
+                <li><a href="index.html#articles">文章</a></li>
+                <li><a href="index.html#projects">项目</a></li>
+                <li><a href="index.html#contact">联系我</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章详情 -->
+    <section class="post-detail-section">
+        <div class="container">
+            <article class="post-content">
+                <header class="post-header">
+                    <h1>JavaScript基础语法详解</h1>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> 2024-01-05</span>
+                        <span><i class="fas fa-folder"></i> JavaScript</span>
+                        <span><i class="fas fa-tag"></i> 基础语法</span>
+                        <span><i class="far fa-eye"></i> 128</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400&q=80" alt="JavaScript基础语法详解">
+                </header>
+
+                <main class="post-body">
+                    <h2>什么是JavaScript？</h2>
+                    <p>JavaScript是一种轻量级的脚本语言，主要用于网页交互和动态内容生成。它是一种解释型语言，不需要编译，可以直接在浏览器中运行。</p>
+                    <p>JavaScript最初是为了给网页添加交互效果而设计的，但现在已经发展成为一种功能强大的编程语言，可以用于开发桌面应用、移动应用、服务器端应用等。</p>
+
+                    <h2>JavaScript的基本语法</h2>
+                    
+                    <h3>1. 变量声明</h3>
+                    <p>在JavaScript中，我们可以使用<code>var</code>、<code>let</code>或<code>const</code>关键字来声明变量：</p>
+                    <pre><code class="javascript">// 使用var声明变量（ES5及之前）
+var name = "HTMLer";
+
+// 使用let声明变量（ES6+）
+let age = 25;
+
+// 使用const声明常量（ES6+）
+const PI = 3.14159;</code></pre>
+                    <p>三者的主要区别：</p>
+                    <ul>
+                        <li><code>var</code>：函数作用域，存在变量提升</li>
+                        <li><code>let</code>：块级作用域，不存在变量提升</li>
+                        <li><code>const</code>：块级作用域，声明后不可修改</li>
+                    </ul>
+
+                    <h3>2. 数据类型</h3>
+                    <p>JavaScript有七种基本数据类型和一种引用数据类型：</p>
+                    <h4>基本数据类型</h4>
+                    <ul>
+                        <li><code>String</code>：字符串，如<code>"Hello World"</code></li>
+                        <li><code>Number</code>：数字，如<code>123</code>、<code>3.14</code></li>
+                        <li><code>Boolean</code>：布尔值，<code>true</code>或<code>false</code></li>
+                        <li><code>Null</code>：空值，表示一个空对象指针</li>
+                        <li><code>Undefined</code>：未定义，表示变量未被赋值</li>
+                        <li><code>Symbol</code>：唯一标识符（ES6+）</li>
+                        <li><code>BigInt</code>：大整数（ES2020+）</li>
+                    </ul>
+                    <h4>引用数据类型</h4>
+                    <ul>
+                        <li><code>Object</code>：对象，包括数组、函数、日期等</li>
+                    </ul>
+                    <pre><code class="javascript">// 基本数据类型
+let str = "JavaScript";  // String
+let num = 100;           // Number
+let bool = true;         // Boolean
+let n = null;            // Null
+let undef;               // Undefined
+let sym = Symbol("id");  // Symbol
+let big = 123n;          // BigInt
+
+// 引用数据类型
+let obj = {name: "HTMLer", age: 25};  // 对象
+let arr = [1, 2, 3, 4, 5];             // 数组
+let func = function() {console.log("Hello");};  // 函数</code></pre>
+
+                    <h3>3. 运算符</h3>
+                    <h4>算术运算符</h4>
+                    <pre><code class="javascript">let a = 10;
+let b = 3;
+
+console.log(a + b);  // 13
+console.log(a - b);  // 7
+console.log(a * b);  // 30
+console.log(a / b);  // 3.3333333333333335
+console.log(a % b);  // 1
+console.log(a++);    // 10，先返回a的值，再自增
+console.log(++a);    // 12，先自增，再返回a的值</code></pre>
+
+                    <h4>比较运算符</h4>
+                    <pre><code class="javascript">let a = 10;
+let b = "10";
+
+console.log(a == b);   // true，相等比较，会进行类型转换
+console.log(a === b);  // false，严格相等比较，不会进行类型转换
+console.log(a != b);   // false
+console.log(a !== b);  // true
+console.log(a > b);    // false
+console.log(a < b);    // false
+console.log(a >= b);   // true
+console.log(a <= b);   // true</code></pre>
+
+                    <h4>逻辑运算符</h4>
+                    <pre><code class="javascript">let a = true;
+let b = false;
+
+console.log(a && b);  // false，逻辑与
+console.log(a || b);  // true，逻辑或
+console.log(!a);      // false，逻辑非</code></pre>
+
+                    <h3>4. 流程控制语句</h3>
+                    <h4>条件语句</h4>
+                    <pre><code class="javascript">// if-else语句
+let score = 85;
+
+if (score >= 90) {
+    console.log("优秀");
+} else if (score >= 80) {
+    console.log("良好");
+} else if (score >= 60) {
+    console.log("及格");
+} else {
+    console.log("不及格");
+}
+
+// switch语句
+let day = 3;
+let dayName;
+
+switch (day) {
+    case 1:
+        dayName = "星期一";
+        break;
+    case 2:
+        dayName = "星期二";
+        break;
+    case 3:
+        dayName = "星期三";
+        break;
+    default:
+        dayName = "未知";
+}</code></pre>
+
+                    <h4>循环语句</h4>
+                    <pre><code class="javascript">// for循环
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // 输出0, 1, 2, 3, 4
+}
+
+// while循环
+let i = 0;
+while (i < 5) {
+    console.log(i);  // 输出0, 1, 2, 3, 4
+    i++;
+}
+
+// do-while循环
+let j = 0;
+do {
+    console.log(j);  // 输出0, 1, 2, 3, 4
+    j++;
+} while (j < 5);
+
+// for-in循环（遍历对象属性）
+let person = {name: "HTMLer", age: 25};
+for (let key in person) {
+    console.log(key + ": " + person[key]);  // name: HTMLer, age: 25
+}
+
+// for-of循环（遍历可迭代对象）
+let arr = [1, 2, 3, 4, 5];
+for (let value of arr) {
+    console.log(value);  // 输出1, 2, 3, 4, 5
+}</code></pre>
+
+                    <h3>5. 函数</h3>
+                    <p>函数是JavaScript中的基本构建块，用于封装可重用的代码块：</p>
+                    <pre><code class="javascript">// 函数声明
+function add(a, b) {
+    return a + b;
+}
+
+// 函数表达式
+let subtract = function(a, b) {
+    return a - b;
+};
+
+// 箭头函数（ES6+）
+let multiply = (a, b) => a * b;
+
+// 调用函数
+console.log(add(10, 5));       // 15
+console.log(subtract(10, 5));  // 5
+console.log(multiply(10, 5));  // 50</code></pre>
+
+                    <h3>6. 数组</h3>
+                    <p>数组是一种特殊的对象，用于存储多个值：</p>
+                    <pre><code class="javascript">// 创建数组
+let fruits = ["苹果", "香蕉", "橙子"];
+let numbers = new Array(1, 2, 3, 4, 5);
+
+// 访问数组元素
+console.log(fruits[0]);  // 苹果
+
+// 修改数组元素
+fruits[1] = "葡萄";
+
+// 数组方法
+fruits.push("草莓");          // 添加元素到数组末尾
+fruits.pop();                // 移除数组末尾的元素
+fruits.unshift("芒果");       // 添加元素到数组开头
+fruits.shift();              // 移除数组开头的元素
+fruits.splice(1, 0, "梨");    // 在指定位置插入元素
+fruits.splice(1, 1);         // 移除指定位置的元素
+
+// 数组遍历
+fruits.forEach(function(fruit) {
+    console.log(fruit);
+});
+
+// 数组转换
+let str = fruits.join(", ");  // 苹果, 梨, 橙子
+let newArr = fruits.map(function(fruit) {
+    return fruit + "好吃";
+});</code></pre>
+
+                    <h3>7. 对象</h3>
+                    <p>对象是JavaScript中的核心概念，用于存储键值对：</p>
+                    <pre><code class="javascript">// 创建对象
+let person = {
+    name: "HTMLer",
+    age: 25,
+    sayHello: function() {
+        console.log("Hello, I'm " + this.name);
+    }
+};
+
+// 访问对象属性
+console.log(person.name);       // HTMLer
+console.log(person["age"]);     // 25
+
+// 修改对象属性
+person.age = 26;
+
+// 添加新属性
+person.gender = "男";
+
+// 删除属性
+delete person.gender;
+
+// 调用对象方法
+person.sayHello();  // Hello, I'm HTMLer</code></pre>
+
+                    <h3>8. 事件处理</h3>
+                    <p>JavaScript可以响应用户的交互事件，如点击、鼠标移动、键盘输入等：</p>
+                    <pre><code class="javascript">// HTML: <button id="myBtn">点击我</button>
+
+// 获取元素
+let btn = document.getElementById("myBtn");
+
+// 添加事件监听器
+btn.addEventListener("click", function() {
+    console.log("按钮被点击了！");
+});
+
+// 内联事件处理（不推荐）
+// <button onclick="alert('点击了！')">点击我</button></code></pre>
+
+                    <h3>9. DOM操作</h3>
+                    <p>DOM（文档对象模型）是JavaScript与HTML文档交互的接口：</p>
+                    <pre><code class="javascript">// 获取元素
+let element = document.getElementById("myId");
+let elements = document.getElementsByClassName("myClass");
+let divs = document.getElementsByTagName("div");
+let query = document.querySelector(".myClass");
+let queries = document.querySelectorAll(".myClass");
+
+// 修改元素内容
+element.innerHTML = "<strong>新内容</strong>";
+element.textContent = "新文本内容";
+
+// 修改元素样式
+element.style.color = "red";
+element.style.fontSize = "20px";
+
+// 修改元素属性
+element.setAttribute("src", "image.jpg");
+element.getAttribute("src");
+
+// 添加/移除CSS类
+element.classList.add("newClass");
+element.classList.remove("oldClass");
+element.classList.toggle("toggleClass");
+
+// 创建和插入元素
+let newElement = document.createElement("div");
+newElement.textContent = "新创建的元素";
+document.body.appendChild(newElement);</code></pre>
+
+                    <h2>JavaScript的基本概念</h2>
+                    
+                    <h3>1. 作用域</h3>
+                    <p>作用域是指变量和函数的可访问范围：</p>
+                    <ul>
+                        <li><strong>全局作用域</strong>：在所有函数外部声明的变量，可在整个程序中访问</li>
+                        <li><strong>函数作用域</strong>：在函数内部声明的变量，只能在函数内部访问</li>
+                        <li><strong>块级作用域</strong>：在<code>{}</code>内部声明的变量，只能在块内部访问（ES6+）</li>
+                    </ul>
+
+                    <h3>2. 闭包</h3>
+                    <p>闭包是指有权访问另一个函数作用域中变量的函数：</p>
+                    <pre><code class="javascript">function outer() {
+    let count = 0;
+    
+    function inner() {
+        count++;
+        console.log(count);
+    }
+    
+    return inner;
+}
+
+let counter = outer();
+counter();  // 1
+counter();  // 2
+counter();  // 3</code></pre>
+
+                    <h3>3. 原型和继承</h3>
+                    <p>JavaScript使用原型链实现继承：</p>
+                    <pre><code class="javascript">// 构造函数
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+// 添加方法到原型
+Person.prototype.sayHello = function() {
+    console.log("Hello, I'm " + this.name);
+};
+
+// 创建实例
+let person1 = new Person("HTMLer", 25);
+person1.sayHello();  // Hello, I'm HTMLer
+
+// 继承
+function Student(name, age, grade) {
+    Person.call(this, name, age);
+    this.grade = grade;
+}
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+let student = new Student("小明", 18, "高三");
+student.sayHello();  // Hello, I'm 小明</code></pre>
+
+                    <h3>4. 异步编程</h3>
+                    <p>JavaScript是单线程语言，但可以通过异步编程处理耗时操作：</p>
+                    <pre><code class="javascript">// 回调函数
+function fetchData(callback) {
+    setTimeout(function() {
+        callback("数据获取成功");
+    }, 1000);
+}
+
+fetchData(function(data) {
+    console.log(data);
+});
+
+// Promise（ES6+）
+function fetchData() {
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            resolve("数据获取成功");
+        }, 1000);
+    });
+}
+
+fetchData().then(function(data) {
+    console.log(data);
+});
+
+// async/await（ES2017+）
+async function getData() {
+    let data = await fetchData();
+    console.log(data);
+}
+
+getData();</code></pre>
+
+                    <h2>JavaScript的最佳实践</h2>
+                    <ul>
+                        <li>使用<code>let</code>和<code>const</code>代替<code>var</code></li>
+                        <li>遵循一致的命名约定</li>
+                        <li>使用箭头函数简化回调函数</li>
+                        <li>避免全局变量污染</li>
+                        <li>使用模块化组织代码</li>
+                        <li>添加适当的注释</li>
+                        <li>使用严格模式（<code>'use strict';</code>）</li>
+                        <li>进行适当的错误处理</li>
+                        <li>优化性能，避免不必要的DOM操作</li>
+                        <li>使用现代JavaScript特性</li>
+                    </ul>
+
+                    <h2>总结</h2>
+                    <p>JavaScript是一种功能强大的脚本语言，具有灵活的语法和广泛的应用场景。掌握JavaScript的基础语法是学习前端开发的重要一步。</p>
+                    <p>本文详细介绍了JavaScript的基本语法，包括变量声明、数据类型、运算符、流程控制语句、函数、数组、对象、事件处理和DOM操作等内容。通过学习这些基础知识，你可以开始编写简单的JavaScript程序，并逐步深入学习更高级的概念。</p>
+                    <p>JavaScript的学习是一个持续的过程，建议多实践、多阅读优秀的代码，并关注JavaScript的最新发展。</p>
+                </main>
+            </article>
+
+            <!-- 互动区域 -->
+            <section class="interaction-section">
+                <button class="interaction-btn" data-type="like">
+                    <i class="far fa-heart"></i>
+                    <span>点赞</span>
+                </button>
+                <button class="interaction-btn" data-type="collect">
+                    <i class="far fa-bookmark"></i>
+                    <span>收藏</span>
+                </button>
+                <button class="interaction-btn" data-type="share">
+                    <i class="far fa-share-square"></i>
+                    <span>分享</span>
+                </button>
+            </section>
+
+            <!-- 评论区 -->
+            <section class="comments-section">
+                <h3>评论</h3>
+                <form class="comment-form">
+                    <textarea placeholder="写下你的评论..."></textarea>
+                    <button type="submit" class="btn">发表评论</button>
+                </form>
+                <div class="comment-list">
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-author">王五</span>
+                            <span class="comment-time">2024-01-08</span>
+                        </div>
+                        <p class="comment-content">这篇文章对JavaScript基础语法讲解得非常详细，适合初学者学习。</p>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-author">赵六</span>
+                            <span class="comment-time">2024-01-06</span>
+                        </div>
+                        <p class="comment-content">感谢分享，让我对JavaScript的理解更加深入了。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="related-section">
+        <div class="container">
+            <h2>相关推荐</h2>
+            <div class="articles-grid">
+                <div class="article-card" data-id="1">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="HTML5语义化布局的最佳实践">
+                    <div class="article-content">
+                        <h3>HTML5语义化布局的最佳实践</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2024-01-15</span>
+                            <span><i class="fas fa-folder"></i> HTML</span>
+                            <span><i class="fas fa-tag"></i> 语义化</span>
+                        </div>
+                        <p class="article-excerpt">语义化HTML是指使用正确的HTML标签来表示内容的结构和含义，而不仅仅是为了样式。本文将介绍HTML5语义化标签的最佳实践...</p>
+                        <a href="文章 HTML.html" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+                <div class="article-card" data-id="2">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="CSS3 Flexbox布局完全指南">
+                    <div class="article-content">
+                        <h3>CSS3 Flexbox布局完全指南</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2024-01-10</span>
+                            <span><i class="fas fa-folder"></i> CSS</span>
+                            <span><i class="fas fa-tag"></i> Flexbox</span>
+                        </div>
+                        <p class="article-excerpt">Flexbox（弹性盒子布局）是CSS3中引入的一种新的布局模式，它提供了一种更高效的方式来布局、对齐和分配容器内元素的空间...</p>
+                        <a href="文章2.HTML" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息 -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-section">
+                <h3>关于博客</h3>
+                <p>这是一个专注于前端开发学习的个人博客，记录我的学习历程和技术分享。</p>
+                <p>坚持原创，分享有价值的技术内容。</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="#">lijiaxu@example.com</a></li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><i class="fab fa-twitter"></i> <a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><i class="fas fa-phone"></i> 12345678</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="archive.html">文章列表</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                    <li><a href="category.html">分类</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HTMLer·个人日志. 保留所有权利. | <a href="https://beian.miit.gov.cn/" target="_blank"></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // 初始化代码高亮
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

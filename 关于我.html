@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - HTMLer·个人日志</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">HTMLer·个人日志</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="关于我.html">关于我</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#articles">文章</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="index.html#contact">联系我</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 关于页面区域 -->
+    <section class="about-section">
+        <div class="container">
+            <h2>关于我</h2>
+            
+            <div class="about-content">
+                <!-- 个人介绍 -->
+                <div class="about-intro">
+                    <div class="about-avatar">
+                        <img src="images/旭.png" alt="" class="avatar">
+                    </div>
+                    <div class="about-text">
+                        <h3>你好，我是<span class="highlight">李嘉旭</span></h3>
+                        <p class="typewriter" data-text="专注于前端开发的学习者，热爱技术，喜欢分享"></p>
+                        <p>我是一名热爱前端开发的学习者，目前主要专注于HTML5、CSS3和JavaScript等前端核心技术的学习和实践。我坚持「手写代码」原则，拒绝过度依赖框架，注重夯实基础，擅长通过语义化标签构建结构清晰、可维护的页面。</p>
+                        <p>我相信技术的力量可以改变世界，所以我一直在不断学习和探索新的前端技术。我喜欢将复杂的问题简化，用优雅的代码解决实际问题。</p>
+                    </div>
+                </div>
+                
+                <!-- 技术栈 -->
+                <div class="about-skills">
+                    <h3>技术栈</h3>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h4>前端技术</h4>
+                            <div class="skill-list">
+                                <span class="skill-item">HTML5</span>
+                                <span class="skill-item">CSS3</span>
+                                <span class="skill-item">JavaScript</span>
+                                <span class="skill-item">ES6+</span>
+                                <span class="skill-item">TypeScript</span>
+                                <span class="skill-item">React</span>
+                                <span class="skill-item">Vue.js</span>
+                                <span class="skill-item">React Native</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>CSS框架</h4>
+                            <div class="skill-list">
+                                <span class="skill-item">Tailwind CSS</span>
+                                <span class="skill-item">Bootstrap</span>
+                                <span class="skill-item">Sass/Less</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>构建工具</h4>
+                            <div class="skill-list">
+                                <span class="skill-item">Webpack</span>
+                                <span class="skill-item">Vite</span>
+                                <span class="skill-item">Gulp</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>其他技术</h4>
+                            <div class="skill-list">
+                                <span class="skill-item">Git</span>
+                                <span class="skill-item">Node.js</span>
+                                <span class="skill-item">Express</span>
+                                <span class="skill-item">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 博客历程 -->
+                <div class="about-journey">
+                    <h3>博客历程</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026-01-01</div>
+                            <div class="timeline-content">
+                                <h4>博客建站</h4>
+                                <p>使用HTML、CSS和JavaScript搭建了个人博客的初始版本，记录学习历程和技术分享。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026-01-04</div>
+                            <div class="timeline-content">
+                                <h4>博客重构</h4>
+                                <p>使用响应式设计重构了博客，适配不同设备，提升用户体验。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026-01-05</div>
+                            <div class="timeline-content">
+                                <h4>内容升级</h4>
+                                <p>增加了更多前端技术文章，包括React、Vue等框架的学习笔记和实战经验。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026-01-07</div>
+                            <div class="timeline-content">
+                                <h4>功能扩展</h4>
+                                <p>添加了文章分类、标签、搜索等功能，提升博客的实用性和易用性。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 联系方式 -->
+                <div class="about-contact">
+                    <h3>联系方式</h3>
+                    <div class="contact-container">
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> 邮箱：<a href="#">lijiaxu@example.com</a></p>
+                            <p><i class="fab fa-github"></i> GitHub：<a href="https://github.com" target="_blank">github.com/lichao</a></p>
+                            <p><i class="fab fa-twitter"></i> Twitter：<a href="https://twitter.com" target="_blank">twitter.com/lichao</a></p>
+                            <p><i class="fab fa-linkedin"></i> LinkedIn：<a href="https://linkedin.com" target="_blank">linkedin.com/in/lichao</a></p>
+                            <p><i class="fas fa-weixin"></i> 微信：<span class="wechat">lijiaxu</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 兴趣爱好 -->
+                <div class="about-hobbies">
+                    <h3>兴趣爱好</h3>
+                    <div class="hobbies-list">
+                        <div class="hobby-item">
+                            <i class="fas fa-book"></i>
+                            <span>阅读技术书籍</span>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-code"></i>
+                            <span>编写代码</span>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-gamepad"></i>
+                            <span>玩游戏</span>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-hiking"></i>
+                            <span>户外徒步</span>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-music"></i>
+                            <span>听音乐</span>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-film"></i>
+                            <span>看电影</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>关于博客</h3>
+                <p>这是一个专注于前端开发学习的个人博客，记录我的学习历程和技术分享。</p>
+                <p>坚持原创，分享有价值的技术内容。</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="#">lijiaxu@example.com</a></li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><i class="fab fa-twitter"></i> <a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><i class="fas fa-phone"></i> 12345678</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <ul>
+                   <li><a href="index.html">首页</a></li>
+                   <li><a href="关于我.html">关于我</a></li>
+                   <li><a href="#skills">技能</a></li>
+                   <li><a href="#articles">文章</a></li>
+                   <li><a href="#projects">项目</a></li>
+                   <li><a href="#contact">联系我</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HTMLer·个人日志. 归lijiaxu所有权利. | <a href="https://beian.miit.gov.cn/" target="_blank"></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <style>
+        /* 关于页面特定样式 */
+        .about-intro {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .about-avatar {
+            flex-shrink: 0;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .about-text .highlight {
+            color: #3498db;
+        }
+        
+        .about-text .typewriter {
+            font-size: 1.2rem;
+            color: #3498db;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            min-height: 2rem;
+        }
+        
+        .about-text p {
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* 技术栈样式 */
+        .about-skills {
+            margin-bottom: 50px;
+        }
+        
+        .about-skills h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background: #f0f0f0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        
+        .skill-item:hover {
+            background: #3498db;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        
+        /* 博客历程样式 */
+        .about-journey {
+            margin-bottom: 50px;
+        }
+        
+        .about-journey h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #3498db;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: -80px;
+            top: 0;
+            background: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .timeline-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3498db;
+        }
+        
+        .timeline-content h4 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .timeline-content p {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* 联系方式样式 */
+        .about-contact {
+            margin-bottom: 50px;
+        }
+        
+        .about-contact h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .contact-info i {
+            color: #3498db;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .wechat {
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .contact-qrcode h4 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .qrcode-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .qrcode-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        /* 兴趣爱好样式 */
+        .about-hobbies {
+            margin-bottom: 30px;
+        }
+        
+        .about-hobbies h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .hobbies-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .hobby-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .hobby-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hobby-item i {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .about-intro {
+                flex-direction: column;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-qrcode {
+                justify-self: center;
+            }
+            
+            .timeline {
+                padding-left: 0;
+            }
+            
+            .timeline::before {
+                display: none;
+            }
+            
+            .timeline-date {
+                position: static;
+                background: transparent;
+                color: #3498db;
+                margin-bottom: 10px;
+                font-size: 1rem;
+            }
+            
+            .timeline-content {
+                border-left: none;
+                border-top: 4px solid #3498db;
+            }
+            
+            .hobbies-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+            
+            .hobbies-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

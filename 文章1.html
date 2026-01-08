@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5语义化布局的最佳实践 - HTMLer·技术日志</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 代码高亮样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">HTMLer·技术日志</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="关于我.html">关于我</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#articles">文章</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#contact">联系我</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章详情区域 -->
+    <section class="post-detail-section">
+        <div class="container">
+            <!-- 文章头部 -->
+            <article class="post-article">
+                <header class="post-header">
+                    <h1>HTML5语义化布局的最佳实践</h1>
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400&q=80" alt="文章封面">
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> 2024-01-15</span>
+                        <span><i class="fas fa-folder"></i> <a href="category.html?name=HTML">HTML</a></span>
+                        <span><i class="fas fa-tag"></i> <a href="tag.html?name=语义化">语义化</a></span>
+                        <span><i class="fas fa-user"></i> 李超</span>
+                        <span><i class="far fa-eye"></i> 128</span>
+                    </div>
+                </header>
+                
+                <!-- 文章正文 -->
+                <div class="post-content">
+                    <p>语义化HTML是指使用正确的HTML标签来表示内容的结构和含义，而不仅仅是为了样式。在HTML5中，引入了大量的语义化标签，这些标签不仅使代码更加清晰易读，还能提高页面的可访问性和SEO表现。</p>
+                    
+                    <h2>一、什么是语义化HTML？</h2>
+                    <p>语义化HTML是指用正确的HTML元素来表示页面内容的结构和含义。例如，使用<code>&lt;header&gt;</code>标签表示页面头部，使用<code>&lt;nav&gt;</code>标签表示导航栏，使用<code>&lt;article&gt;</code>标签表示一篇文章等。</p>
+                    <p>语义化HTML的核心思想是：<strong>HTML应该描述内容的结构和含义，而CSS应该负责内容的样式和外观</strong>。</p>
+                    
+                    <h2>二、HTML5语义化标签的分类</h2>
+                    <p>HTML5语义化标签主要分为以下几类：</p>
+                    
+                    <h3>1. 文档结构标签</h3>
+                    <ul>
+                        <li><code>&lt;header&gt;</code> - 页面或区块的头部</li>
+                        <li><code>&lt;nav&gt;</code> - 导航栏</li>
+                        <li><code>&lt;main&gt;</code> - 页面的主要内容</li>
+                        <li><code>&lt;footer&gt;</code> - 页面或区块的底部</li>
+                    </ul>
+                    
+                    <h3>2. 内容区块标签</h3>
+                    <ul>
+                        <li><code>&lt;article&gt;</code> - 独立完整的内容块，如文章、博客帖子等</li>
+                        <li><code>&lt;section&gt;</code> - 相关内容的逻辑分组，通常包含一个标题</li>
+                        <li><code>&lt;aside&gt;</code> - 侧边栏内容，与主要内容相关但非必需</li>
+                    </ul>
+                    
+                    <h3>3. 文本内容标签</h3>
+                    <ul>
+                        <li><code>&lt;figure&gt;</code> - 独立的媒体内容，如图片、图表等</li>
+                        <li><code>&lt;figcaption&gt;</code> - 媒体内容的说明文字</li>
+                        <li><code>&lt;time&gt;</code> - 日期或时间</li>
+                        <li><code>&lt;mark&gt;</code> - 高亮文本</li>
+                    </ul>
+                    
+                    <h2>三、HTML5语义化布局的最佳实践</h2>
+                    
+                    <h3>1. 页面整体结构</h3>
+                    <p>一个典型的HTML5页面结构应该包含以下语义化标签：</p>
+                    
+                    <pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;页面标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;!-- 页面头部内容，如logo、导航等 --&gt;
+    &lt;/header&gt;
+    
+    &lt;nav&gt;
+        &lt;!-- 导航栏内容 --&gt;
+    &lt;/nav&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;!-- 主要文章内容 --&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;!-- 侧边栏内容 --&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;!-- 页面底部内容，如版权信息等 --&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <h3>2. 文章结构</h3>
+                    <p>对于博客文章或新闻文章，应该使用<code>&lt;article&gt;</code>标签，并在内部使用适当的语义化标签来组织内容：</p>
+                    
+                    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1&gt;文章标题&lt;/h1&gt;
+        &lt;p&gt;发布日期：&lt;time datetime="2024-01-15"&gt;2024年1月15日&lt;/time&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;section&gt;
+        &lt;h2&gt;章节标题&lt;/h2&gt;
+        &lt;p&gt;章节内容...&lt;/p&gt;
+        
+        &lt;figure&gt;
+            &lt;img src="image.jpg" alt="图片描述"&gt;
+            &lt;figcaption&gt;图片说明&lt;/figcaption&gt;
+        &lt;/figure&gt;
+    &lt;/section&gt;
+    
+    &lt;section&gt;
+        &lt;h2&gt;另一章节标题&lt;/h2&gt;
+        &lt;p&gt;章节内容...&lt;/p&gt;
+    &lt;/section&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;文章作者：张三&lt;/p&gt;
+        &lt;p&gt;标签：&lt;a href="#"&gt;HTML&lt;/a&gt;, &lt;a href="#"&gt;语义化&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+                    
+                    <h3>3. 导航栏实现</h3>
+                    <p>导航栏应该使用<code>&lt;nav&gt;</code>标签，并在内部使用无序列表来组织导航链接：</p>
+                    
+                    <pre><code class="html">&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="archive.html"&gt;文章列表&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="category.html"&gt;分类&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="about.html"&gt;关于我&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                    
+                    <h2>四、语义化HTML的优势</h2>
+                    
+                    <h3>1. 提高可访问性</h3>
+                    <p>语义化HTML使屏幕阅读器等辅助技术能够更好地理解页面内容，从而提高网站的可访问性，使更多人能够访问和使用网站。</p>
+                    
+                    <h3>2. 改善SEO表现</h3>
+                    <p>搜索引擎爬虫能够更好地理解语义化HTML的结构和内容，从而提高网站在搜索结果中的排名。</p>
+                    
+                    <h3>3. 增强代码可读性和可维护性</h3>
+                    <p>语义化HTML使代码更加清晰易读，便于开发人员理解和维护，特别是在团队协作环境中。</p>
+                    
+                    <h3>4. 更好的浏览器兼容性</h3>
+                    <p>现代浏览器对HTML5语义化标签的支持非常好，使用语义化HTML可以确保网站在不同浏览器中都能正确显示。</p>
+                    
+                    <h2>五、常见错误和注意事项</h2>
+                    
+                    <h3>1. 不要滥用语义化标签</h3>
+                    <p>语义化标签应该根据内容的实际含义来使用，不要为了样式而滥用语义化标签。例如，不要使用<code>&lt;section&gt;</code>标签来代替<code>&lt;div&gt;</code>标签进行布局。</p>
+                    
+                    <h3>2. 确保标签嵌套正确</h3>
+                    <p>语义化标签的嵌套应该符合HTML规范，例如，<code>&lt;main&gt;</code>标签应该只出现一次，并且不能嵌套在<code>&lt;header&gt;</code>、<code>&lt;nav&gt;</code>、<code>&lt;aside&gt;</code>或<code>&lt;footer&gt;</code>标签内部。</p>
+                    
+                    <h3>3. 为旧浏览器提供兼容方案</h3>
+                    <p>虽然现代浏览器对HTML5语义化标签的支持很好，但为了兼容旧浏览器（如IE8及以下），可以使用HTML5 Shiv等工具来提供支持。</p>
+                    
+                    <h2>六、总结</h2>
+                    <p>语义化HTML是现代网页设计的重要原则之一，它不仅能提高网站的可访问性和SEO表现，还能增强代码的可读性和可维护性。在实际开发中，我们应该根据内容的实际含义选择合适的HTML5语义化标签，遵循语义化HTML的最佳实践，创建结构清晰、含义明确的网页。</p>
+                    <p>通过本文的介绍，相信你对HTML5语义化布局的最佳实践有了更深入的理解。在今后的开发中，不妨尝试使用HTML5语义化标签来构建你的网页，体验语义化HTML带来的好处。</p>
+                </div>
+            </article>
+            
+            <!-- 互动区域 -->
+            <section class="interaction-section">
+                <button class="interaction-btn" data-type="like">
+                    <i class="far fa-heart"></i>
+                    <span>点赞 (42)</span>
+                </button>
+                <button class="interaction-btn" data-type="collect">
+                    <i class="far fa-bookmark"></i>
+                    <span>收藏 (28)</span>
+                </button>
+                <button class="interaction-btn" data-type="share">
+                    <i class="fas fa-share-alt"></i>
+                    <span>分享</span>
+                </button>
+                <button class="interaction-btn" data-type="comment">
+                    <i class="far fa-comment"></i>
+                    <span>评论 (15)</span>
+                </button>
+            </section>
+            
+            <!-- 评论区 -->
+            <section class="comments-section">
+                <h3>评论区</h3>
+                
+                <!-- 评论表单 -->
+                <form class="comment-form">
+                    <textarea placeholder="写下你的评论..." required></textarea>
+                    <div class="comment-form-actions">
+                        <button type="submit" class="btn">提交评论</button>
+                    </div>
+                </form>
+                
+                <!-- 评论列表 -->
+                <div class="comment-list">
+                    <!-- 评论项1 -->
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-author">张三</span>
+                            <span class="comment-time">2024-01-16 14:30</span>
+                        </div>
+                        <div class="comment-content">
+                            <p>非常好的文章，对我理解HTML5语义化布局很有帮助！</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 评论项2 -->
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-author">李四</span>
+                            <span class="comment-time">2024-01-16 16:45</span>
+                        </div>
+                        <div class="comment-content">
+                            <p>请问在实际开发中，如何平衡语义化和浏览器兼容性？</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 评论项3 -->
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-author">王五</span>
+                            <span class="comment-time">2024-01-17 09:20</span>
+                        </div>
+                        <div class="comment-content">
+                            <p>文章写得很详细，感谢分享！</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    
+    <!-- 相关推荐 -->
+    <section class="related-section">
+        <div class="container">
+            <h2>相关推荐</h2>
+            <div class="articles-grid">
+                <!-- 相关文章1 -->
+                <div class="article-card" data-id="2">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="文章封面">
+                    <div class="article-content">
+                        <h3>CSS3 Flexbox布局完全指南</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2024-01-10</span>
+                            <span><i class="fas fa-folder"></i> CSS</span>
+                            <span><i class="fas fa-tag"></i> Flexbox</span>
+                            <span><i class="far fa-eye"></i> 95</span>
+                        </div>
+                        <p class="article-excerpt">Flexbox是CSS3中引入的一种新的布局模式，它提供了一种更高效的方式来布局、对齐和分配容器内元素的空间...</p>
+                        <a href="post.html?id=2" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+                
+                <!-- 相关文章2 -->
+                <div class="article-card" data-id="4">
+                    <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="文章封面">
+                    <div class="article-content">
+                        <h3>响应式设计的核心原则与实践</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2023-12-28</span>
+                            <span><i class="fas fa-folder"></i> 响应式设计</span>
+                            <span><i class="fas fa-tag"></i> 响应式</span>
+                            <span><i class="far fa-eye"></i> 89</span>
+                        </div>
+                        <p class="article-excerpt">响应式设计是一种网页设计方法，它使网页能够根据不同设备的屏幕尺寸和分辨率自动调整布局和内容...</p>
+                        <a href="post.html?id=4" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+                
+                <!-- 相关文章3 -->
+                <div class="article-card" data-id="6">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="文章封面">
+                    <div class="article-content">
+                        <h3>CSS Grid布局入门教程</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2023-12-15</span>
+                            <span><i class="fas fa-folder"></i> CSS</span>
+                            <span><i class="fas fa-tag"></i> Grid</span>
+                            <span><i class="far fa-eye"></i> 76</span>
+                        </div>
+                        <p class="article-excerpt">CSS Grid是一种二维布局系统，它允许你同时处理行和列，创建复杂的网页布局...</p>
+                        <a href="post.html?id=6" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>关于博客</h3>
+                <p>这是一个专注于前端开发学习的个人博客，记录我的学习历程和技术分享。</p>
+                <p>坚持原创，分享有价值的技术内容。</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="#">lijiaxu@example.com</a></li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><i class="fab fa-twitter"></i> <a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><i class="fas fa-phone"></i> 12345678</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="关于我.html">关于我</a></li>
+                    <li><a href="#skills">技能</a></li>
+                    <li><a href="#articles">文章</a></li>
+                    <li><a href="#projects">项目</a></li>
+                    <li><a href="#contact">联系我</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HTMLer·个人日志. 保留所有权利. | <a href="https://beian.miit.gov.cn/" target="_blank"></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

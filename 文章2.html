@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Flexbox布局完全指南 - HTMLer·技术日志</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">HTMLer·技术日志</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="关于我.html">关于我</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#articles">文章</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="index.html#contact">联系我</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章详情 -->
+    <section class="post-detail-section">
+        <div class="container">
+            <article class="post-content">
+                <header class="post-header">
+                    <h1>CSS3 Flexbox布局完全指南</h1>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> 2024-01-10</span>
+                        <span><i class="fas fa-folder"></i> CSS</span>
+                        <span><i class="fas fa-tag"></i> Flexbox</span>
+                        <span><i class="far fa-eye"></i> 95</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400&q=80" alt="CSS3 Flexbox布局完全指南">
+                </header>
+
+                <main class="post-body">
+                    <h2>什么是Flexbox？</h2>
+                    <p>Flexbox（弹性盒子布局）是CSS3中引入的一种新的布局模式，它提供了一种更高效的方式来布局、对齐和分配容器内元素的空间，即使这些元素的大小是未知的或动态变化的。</p>
+                    <p>Flexbox的主要优势在于它能够自动分配容器内元素的空间，并且能够轻松地实现复杂的对齐方式，而无需使用浮动、定位等传统布局技术。</p>
+
+                    <h2>Flexbox的基本概念</h2>
+                    <p>在Flexbox布局中，有两个主要的概念：</p>
+                    <ul>
+                        <li><strong>Flex容器（Flex Container）：</strong>设置了<code>display: flex</code>或<code>display: inline-flex</code>的元素</li>
+                        <li><strong>Flex项目（Flex Item）：</strong>Flex容器的直接子元素</li>
+                    </ul>
+
+                    <h2>Flex容器的属性</h2>
+                    <h3>1. display</h3>
+                    <p>定义一个Flex容器：</p>
+                    <pre><code class="css">.container {
+    display: flex; /* 块级Flex容器 */
+    /* 或 */
+    display: inline-flex; /* 行内Flex容器 */
+}</code></pre>
+
+                    <h3>2. flex-direction</h3>
+                    <p>定义Flex项目的排列方向：</p>
+                    <pre><code class="css">.container {
+    flex-direction: row; /* 默认值，水平排列 */
+    /* 或 */
+    flex-direction: row-reverse; /* 水平反向排列 */
+    /* 或 */
+    flex-direction: column; /* 垂直排列 */
+    /* 或 */
+    flex-direction: column-reverse; /* 垂直反向排列 */
+}</code></pre>
+
+                    <h3>3. flex-wrap</h3>
+                    <p>定义Flex项目是否换行：</p>
+                    <pre><code class="css">.container {
+    flex-wrap: nowrap; /* 默认值，不换行 */
+    /* 或 */
+    flex-wrap: wrap; /* 换行 */
+    /* 或 */
+    flex-wrap: wrap-reverse; /* 反向换行 */
+}</code></pre>
+
+                    <h3>4. flex-flow</h3>
+                    <p>是<code>flex-direction</code>和<code>flex-wrap</code>的简写：</p>
+                    <pre><code class="css">.container {
+    flex-flow: row wrap; /* 水平排列并换行 */
+}</code></pre>
+
+                    <h3>5. justify-content</h3>
+                    <p>定义Flex项目在主轴上的对齐方式：</p>
+                    <pre><code class="css">.container {
+    justify-content: flex-start; /* 默认值，左对齐 */
+    /* 或 */
+    justify-content: flex-end; /* 右对齐 */
+    /* 或 */
+    justify-content: center; /* 居中对齐 */
+    /* 或 */
+    justify-content: space-between; /* 两端对齐，项目之间的间隔相等 */
+    /* 或 */
+    justify-content: space-around; /* 每个项目两侧的间隔相等 */
+    /* 或 */
+    justify-content: space-evenly; /* 项目之间的间隔相等 */
+}</code></pre>
+
+                    <h3>6. align-items</h3>
+                    <p>定义Flex项目在交叉轴上的对齐方式：</p>
+                    <pre><code class="css">.container {
+    align-items: stretch; /* 默认值，拉伸填充 */
+    /* 或 */
+    align-items: flex-start; /* 顶部对齐 */
+    /* 或 */
+    align-items: flex-end; /* 底部对齐 */
+    /* 或 */
+    align-items: center; /* 居中对齐 */
+    /* 或 */
+    align-items: baseline; /* 基线对齐 */
+}</code></pre>
+
+                    <h3>7. align-content</h3>
+                    <p>定义多根轴线的对齐方式，当项目换行时有效：</p>
+                    <pre><code class="css">.container {
+    align-content: stretch; /* 默认值，拉伸填充 */
+    /* 或 */
+    align-content: flex-start; /* 顶部对齐 */
+    /* 或 */
+    align-content: flex-end; /* 底部对齐 */
+    /* 或 */
+    align-content: center; /* 居中对齐 */
+    /* 或 */
+    align-content: space-between; /* 两端对齐 */
+    /* 或 */
+    align-content: space-around; /* 每个轴线两侧的间隔相等 */
+}</code></pre>
+
+                    <h2>Flex项目的属性</h2>
+                    <h3>1. order</h3>
+                    <p>定义项目的排列顺序，数值越小，排列越靠前：</p>
+                    <pre><code class="css">.item {
+    order: 0; /* 默认值 */
+    /* 或 */
+    order: 1; /* 排在后面 */
+    /* 或 */
+    order: -1; /* 排在前面 */
+}</code></pre>
+
+                    <h3>2. flex-grow</h3>
+                    <p>定义项目的放大比例，默认值为0，即不放大：</p>
+                    <pre><code class="css">.item {
+    flex-grow: 0; /* 默认值，不放大 */
+    /* 或 */
+    flex-grow: 1; /* 放大 */
+    /* 或 */
+    flex-grow: 2; /* 放大两倍 */
+}</code></pre>
+
+                    <h3>3. flex-shrink</h3>
+                    <p>定义项目的缩小比例，默认值为1，即当空间不足时会缩小：</p>
+                    <pre><code class="css">.item {
+    flex-shrink: 1; /* 默认值，会缩小 */
+    /* 或 */
+    flex-shrink: 0; /* 不会缩小 */
+    /* 或 */
+    flex-shrink: 2; /* 缩小两倍 */
+}</code></pre>
+
+                    <h3>4. flex-basis</h3>
+                    <p>定义项目在分配多余空间之前的初始大小：</p>
+                    <pre><code class="css">.item {
+    flex-basis: auto; /* 默认值，项目的本来大小 */
+    /* 或 */
+    flex-basis: 100px; /* 初始大小为100px */
+    /* 或 */
+    flex-basis: 50%; /* 初始大小为容器的50% */
+}</code></pre>
+
+                    <h3>5. flex</h3>
+                    <p>是<code>flex-grow</code>、<code>flex-shrink</code>和<code>flex-basis</code>的简写：</p>
+                    <pre><code class="css">.item {
+    flex: 0 1 auto; /* 默认值 */
+    /* 或 */
+    flex: 1; /* 相当于flex: 1 1 0% */
+    /* 或 */
+    flex: 1 0 auto; /* 放大，不缩小，自动大小 */
+}</code></pre>
+
+                    <h3>6. align-self</h3>
+                    <p>定义单个项目的对齐方式，覆盖容器的<code>align-items</code>属性：</p>
+                    <pre><code class="css">.item {
+    align-self: auto; /* 默认值，继承容器的align-items */
+    /* 或 */
+    align-self: flex-start; /* 顶部对齐 */
+    /* 或 */
+    align-self: flex-end; /* 底部对齐 */
+    /* 或 */
+    align-self: center; /* 居中对齐 */
+    /* 或 */
+    align-self: stretch; /* 拉伸填充 */
+    /* 或 */
+    align-self: baseline; /* 基线对齐 */
+}</code></pre>
+
+                    <h2>Flexbox布局实例</h2>
+                    <h3>1. 居中布局</h3>
+                    <pre><code class="css">.container {
+    display: flex;
+    justify-content: center; /* 主轴居中 */
+    align-items: center; /* 交叉轴居中 */
+    height: 300px;
+}</code></pre>
+
+                    <h3>2. 均匀分布</h3>
+                    <pre><code class="css">.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 0 0 30%; /* 每个项目占30%宽度，不放大，不缩小 */
+}</code></pre>
+
+                    <h3>3. 响应式布局</h3>
+                    <pre><code class="css">.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item {
+    flex: 1 1 200px; /* 最小宽度200px，自动放大缩小 */
+}</code></pre>
+
+                    <h2>Flexbox布局的优势</h2>
+                    <ul>
+                        <li>简单易用，学习成本低</li>
+                        <li>强大的对齐能力</li>
+                        <li>自动分配空间，适应不同屏幕尺寸</li>
+                        <li>灵活的排列方式</li>
+                        <li>无需使用浮动和定位，避免了相关问题</li>
+                        <li>支持响应式设计</li>
+                    </ul>
+
+                    <h2>浏览器兼容性</h2>
+                    <p>Flexbox布局在现代浏览器中得到了广泛支持，包括：</p>
+                    <ul>
+                        <li>Chrome 21+</li>
+                        <li>Firefox 28+</li>
+                        <li>Safari 6.1+</li>
+                        <li>Edge 12+</li>
+                        <li>Opera 12.1+</li>
+                    </ul>
+                    <p>对于旧版本浏览器，可以使用浏览器前缀或降级方案。</p>
+
+                    <h2>总结</h2>
+                    <p>Flexbox布局是CSS3中引入的一种强大的布局模式，它提供了一种更高效的方式来布局、对齐和分配容器内元素的空间。通过掌握Flexbox的基本概念和属性，我们可以轻松实现各种复杂的布局效果，提高开发效率，同时支持响应式设计。</p>
+                    <p>Flexbox布局的核心思想是让容器能够根据可用空间自动调整其子元素的大小和位置，从而实现灵活的布局。它特别适合用于实现导航栏、卡片布局、表单布局等常见的网页组件。</p>
+                </main>
+            </article>
+
+            <!-- 互动区域 -->
+            <section class="interaction-section">
+                <button class="interaction-btn" data-type="like">
+                    <i class="far fa-heart"></i>
+                    <span>点赞</span>
+                </button>
+                <button class="interaction-btn" data-type="collect">
+                    <i class="far fa-bookmark"></i>
+                    <span>收藏</span>
+                </button>
+                <button class="interaction-btn" data-type="share">
+                    <i class="far fa-share-square"></i>
+                    <span>分享</span>
+                </button>
+            </section>
+
+            <!-- 评论区 -->
+            <section class="comments-section">
+                <h3>评论</h3>
+                <form class="comment-form">
+                    <textarea placeholder="写下你的评论..."></textarea>
+                    <button type="submit" class="btn">发表评论</button>
+                </form>
+                <div class="comment-list">
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-author">张三</span>
+                            <span class="comment-time">2024-01-12</span>
+                        </div>
+                        <p class="comment-content">这篇文章写得非常详细，对我学习Flexbox布局很有帮助！</p>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-author">李四</span>
+                            <span class="comment-time">2024-01-11</span>
+                        </div>
+                        <p class="comment-content">谢谢分享，Flexbox布局确实是现代Web开发中不可或缺的技能。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="related-section">
+        <div class="container">
+            <h2>相关推荐</h2>
+            <div class="articles-grid">
+                <div class="article-card" data-id="1">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="HTML5语义化布局的最佳实践">
+                    <div class="article-content">
+                        <h3>HTML5语义化布局的最佳实践</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2024-01-15</span>
+                            <span><i class="fas fa-folder"></i> HTML</span>
+                            <span><i class="fas fa-tag"></i> 语义化</span>
+                        </div>
+                        <p class="article-excerpt">语义化HTML是指使用正确的HTML标签来表示内容的结构和含义，而不仅仅是为了样式。本文将介绍HTML5语义化标签的最佳实践...</p>
+                        <a href="文章 HTML.html" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+                <div class="article-card" data-id="3">
+                    <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="JavaScript基础语法详解">
+                    <div class="article-content">
+                        <h3>JavaScript基础语法详解</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 2024-01-05</span>
+                            <span><i class="fas fa-folder"></i> JavaScript</span>
+                            <span><i class="fas fa-tag"></i> 基础语法</span>
+                        </div>
+                        <p class="article-excerpt">JavaScript是一种轻量级的脚本语言，广泛用于网页交互和动态内容生成。本文将详细介绍JavaScript的基础语法...</p>
+                        <a href="文章3.html" class="article-link">阅读全文 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息 -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-section">
+                <h3>关于博客</h3>
+                <p>这是一个专注于前端开发学习的个人博客，记录我的学习历程和技术分享。</p>
+                <p>坚持原创，分享有价值的技术内容。</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="#">lijiaxu@example.com</a></li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><i class="fab fa-twitter"></i> <a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><i class="fas fa-phone"></i> 12345678</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="archive.html">文章列表</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                    <li><a href="category.html">分类</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HTMLer·个人日志. 保留所有权利. | <a href="https://beian.miit.gov.cn/" target="_blank"></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // 初始化代码高亮
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
